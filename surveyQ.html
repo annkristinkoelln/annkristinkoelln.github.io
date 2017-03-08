@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+<body onload=”randomizeList()”>
+
+<script>
+
+function randomizeItems()
+{
+    var cached = items.slice(0), temp, i = cached.length, rand;
+    while(--i)
+    {
+        rand = Math.floor(i * Math.random());
+        temp = cached[rand];
+        cached[rand] = cached[i];
+        cached[i] = temp;
+    }
+    return cached;
+}
+function randomizeList()
+{
+var list = document.getElementById("responses");
+    var nodes = list.children, i = 0;
+    nodes = Array.prototype.slice.call(nodes);
+    nodes = randomizeItems(nodes);
+    while(i < nodes.length)
+    {
+        list.appendChild(nodes[i]);
+        ++i;
+    }
+list.style.display="block";
+}
+ </script>
+
+<p> Viele Leute unterscheiden sich darin, was sie unter dem Wort „Kompetenz” verstehen. Hier sind einige Möglichkeiten, wie man Kompetenz von Parteien verstehen könnte. Bitte wählen Sie die <b>drei</b> für Sie am zutreffendsten Verständnisse aus, beginnend mit ”1” für das zutreffendste Verständnis. <br /> <br /><br />Eine politische Partei ist kompetent, wenn sie... </p> <br />
+
+<form>
+
+<ul id=”responses”>
+weiß, was machbar ist und was nicht. <input type=”text” name = “understanding1” size = 1> <br>
+
+den Willen der Mehrheit umsetzt. <input type=”text” name = “understanding2” size = 1> <br>
+
+keine Angst hat, große Veränderungen umzusetzen. <input type=”text” name = “understanding3” size = 1> <br>
+
+insbesondere auf ihre Stammwählerschaft eingeht. <input type=”text” name = “understanding4” size = 1><br>
+
+gut ausgebildete Politiker hat, die über Probleme wirklich nachdenken. <input type=”text” name = “understanding5” size = 1><br>
+
+sie ein gute Wirtschaftspolitik hat. <input type=”text” name = “understanding6” size = 1> <br>
+
+kein Blatt vor den Mund nimmt und keine Angst vor Konflikten hat. <input type=”text” name = “understanding7” size = 1><br>
+
+ihre Wahlversprechen einhält. <input type=”text” name = “understanding8” size = 1> <br>
+
+</ul>
+
+</form>
+
+</body>
+
+</html>
